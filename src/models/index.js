@@ -1,12 +1,17 @@
 import Sequelize from 'sequelize';
 
 import getUserModel from './user';
-import getMessageModel from './message';
+import getTokenModel from './token';
+
+var DATABASE = 'test'
+var DATABASE_USER = 'postgres'
+var DATABASE_PASSWORD= 'admin'
+
 
 const sequelize = new Sequelize(
-  process.env.DATABASE,
-  process.env.DATABASE_USER,
-  process.env.DATABASE_PASSWORD,
+ DATABASE,
+ DATABASE_USER,
+ DATABASE_PASSWORD,
   {
     dialect: 'postgres',
   },
@@ -14,7 +19,7 @@ const sequelize = new Sequelize(
 
 const models = {
   User: getUserModel(sequelize, Sequelize),
-  Message: getMessageModel(sequelize, Sequelize),
+  Token: getTokenModel(sequelize, Sequelize),
 };
 
 Object.keys(models).forEach((key) => {

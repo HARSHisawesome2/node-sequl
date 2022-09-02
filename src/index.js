@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import cors from 'cors';
+
 import express from 'express';
 
 import models, { sequelize } from './models';
@@ -11,7 +11,7 @@ const app = express();
 
 // Third-Party Middleware
 
-app.use(cors());
+
 
 // Built-In Middleware
 

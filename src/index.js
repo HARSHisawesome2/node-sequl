@@ -1,9 +1,9 @@
-import 'dotenv/config';
 
-import express from 'express';
 
-import models, { sequelize } from './models';
-import routes from './routes';
+const  express = require( 'express');
+
+const  models, { sequelize } = require ( './models') ;
+const  routes = require('./routes') ;
 
 const app = express();
 
